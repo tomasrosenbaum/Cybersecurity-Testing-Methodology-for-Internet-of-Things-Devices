@@ -46,7 +46,6 @@ If you are only testing for your own use, setting time boundaries can help not g
 
 ### Payment
 
-> [!NOTE]
 > This section is only relevant if you are testing a device for a client.
 
 
