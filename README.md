@@ -13,3 +13,5 @@
     1. Communication protocol
 1. [Post exploitation](sites/post-exploitation.md)
 1. [Reporting](sites/reporting.md)
+
+## Pre-engagement interactions
