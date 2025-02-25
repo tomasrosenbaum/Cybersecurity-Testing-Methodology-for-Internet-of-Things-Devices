@@ -36,9 +36,27 @@ Denial of service (DoS) testing is among the areas to be discussed prior to test
 
 Oftentimes IoT devices rely on cloud services to be able to control them. Ensure that you do not interfere with these services or have a written permission stating what testing you are able to perform toward the cloud.
 
+### Compliance
+
+When testing a device, you may also check for compliance. Keep in mind that this should not be the primary goal of your testing as compliance does not imply security.
+
+### Contact
+
+> This section is only relevant if you are testing a device for a client.
+
+Establish proper, safe lines of communication with the client. You will generally need two contact types: normal and emergency.
+
+Emergency contacts are for emergencies - that is they are to be used only when a critical flaw is found and it is necessary to report it immediately.
+
+For all contacts you need to establish reliable and secure line of communication. Use only encrypted channels to transfer any sensitive data.
+
+You should also set up regular status reports with the client where you will go through the curent status of testing. These do not need to be as often as with non-IoT testing as you generally do not need client's cooperation.
+
 ### Time
 
 Before the testing begins, it is important to specify when the testing starts and when it ends. This step is imprtant mainly when dealing with a client and a budget but can be helpful when testing for own use as well.
+
+It can also be helpful to prepare a more detailed timeline showing when each part of testing will take place. 
 
 When dealing with a client explicitly stating start and end dates helps with managing expectations. When it comes to budget, it ensures that you do not work more than the budget allows for. If there is a need for more work to be done make sure that it is paid for.
 
@@ -48,6 +66,13 @@ If you are only testing for your own use, setting time boundaries can help not g
 
 > This section is only relevant if you are testing a device for a client.
 
+Do not forget to specify the terms and dates for payment. The terms will differ for each tester but the goal is to determine when and how much you will be paid.
+
+### Legal
+
+Be sure to check the legality of the tests before you begin testing. This will depend on the location of the tests.
+
+When testing radio communication for example, be sure to only utilize frequencies allowed in your area.
 
 ## Intelligence gathering
 
