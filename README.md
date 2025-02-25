@@ -4,17 +4,51 @@
 1. [Intelligence gathering](#intelligence-gathering)
 1. [Threat modeling](#threat-modeling)
 1. [Vulnerability analysis](#vulnerability-analysis)
-    1. [Hardware](#hardware)
-    1. [Firmware](#firmware)
-    1. [Communication protocol](#communication-protocol)
 1. [Exploitation](#exploitation)
-    1. [Hardware](#hardware-1)
-    1. [Firmware](#firmware-1)
-    1. [Communication protocol](#communication-protocol-1)
 1. [Post exploitation](#post-exploitation)
 1. [Reporting](#reporting)
 
 ## Pre-engagement interactions
+
+This section aims to describe the necessary steps to prepare for the penetration test. Even if the testing is not done for a client but rather for your own needs, it is still important to go through the following steps.
+
+### Scope
+
+The most important part of this step is determining the scope of tests. There are 3 main areas to be addressed when defining the scope:
+
+- hardware,
+- firmware,
+- and communication protocol.
+
+When describing scope of hardware testing, determine wether it is needed in the first place and if so, which specific components need to be tested. For all tested components try to acquire the corresponding documentation and schematics.
+
+Determine wether to test the device's firmware and try to obtain it as well as any documentation or source code associated with it. You may also choose to specify parts of the firmware to be omitted.
+
+If the device's communication protocol is in-scope determine what layers of the protocol needs testing and acquire the documentation.
+
+If multiple devices are to be tested together, you need to repeat the steps for each device.
+
+### Denial of service
+
+Denial of service (DoS) testing is among the areas to be discussed prior to testing. While it is a valid thing to test, the findings are oftentimes not fixable anyway so you may be able to shorten the time required for testing. Not to mention that there may occur irreversible damage to the device itself.
+
+### Third parties
+
+Oftentimes IoT devices rely on cloud services to be able to control them. Ensure that you do not interfere with these services or have a written permission stating what testing you are able to perform toward the cloud.
+
+### Time
+
+Before the testing begins, it is important to specify when the testing starts and when it ends. This step is imprtant mainly when dealing with a client and a budget but can be helpful when testing for own use as well.
+
+When dealing with a client explicitly stating start and end dates helps with managing expectations. When it comes to budget, it ensures that you do not work more than the budget allows for. If there is a need for more work to be done make sure that it is paid for.
+
+If you are only testing for your own use, setting time boundaries can help not getting stuck on testing.
+
+### Payment
+
+> [!NOTE]
+> This section is only relevant if you are testing a device for a client.
+
 
 ## Intelligence gathering
 
