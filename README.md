@@ -20,11 +20,11 @@ The most important part of this step is determining the scope of tests. There ar
 - firmware,
 - and communication protocol.
 
-When describing scope of hardware testing, determine wether it is needed in the first place and if so, which specific components need to be tested. For all tested components try to acquire the corresponding documentation and schematics.
+When describing scope of hardware testing, determine wether it is needed in the first place and if so, which specific components need to be tested. For all tested components, try to acquire the corresponding documentation and schematics.
 
-Determine wether to test the device's firmware and try to obtain it as well as any documentation or source code associated with it. You may also choose to specify parts of the firmware to be omitted.
+Determine wether to test the device’s firmware and try to obtain it as well as any documentation or source code associated with it. You may also choose to specify parts of the firmware to be omitted.
 
-If the device's communication protocol is in-scope determine what layers of the protocol needs testing and acquire the documentation.
+If the device’s communication protocol is in-scope determine what layers of the protocol needs testing and acquire the documentation.
 
 If multiple devices are to be tested together, you need to repeat the steps for each device.
 
@@ -38,7 +38,7 @@ Oftentimes IoT devices rely on cloud services to be able to control them. Ensure
 
 ### Compliance
 
-When testing a device, you may also check for compliance. Keep in mind that this should not be the primary goal of your testing as compliance does not imply security.
+When testing a device, you may also check for compliance. Keep in mind that this should not be the primary goal of your testing, as compliance does not imply security.
 
 ### Contact
 
@@ -46,17 +46,17 @@ When testing a device, you may also check for compliance. Keep in mind that this
 
 Establish proper, safe lines of communication with the client. You will generally need two contact types: normal and emergency.
 
-Emergency contacts are for emergencies - that is they are to be used only when a critical flaw is found and it is necessary to report it immediately.
+Emergency contacts are for emergencies—that is, they are to be used only when a critical flaw is found and it is necessary to report it immediately.
 
-For all contacts you need to establish reliable and secure line of communication. Use only encrypted channels to transfer any sensitive data.
+For all contacts, you need to establish a reliable and secure line of communication. Use only encrypted channels to transfer any sensitive data.
 
-You should also set up regular status reports with the client where you will go through the curent status of testing. These do not need to be as often as with non-IoT testing as you generally do not need client's cooperation.
+You should also set up regular status reports with the client where you will go through the curent status of testing. These do not need to be as often as with non-IoT testing as you generally do not need client’s cooperation.
 
 ### Time
 
 Before the testing begins, it is important to specify when the testing starts and when it ends. This step is imprtant mainly when dealing with a client and a budget but can be helpful when testing for own use as well.
 
-It can also be helpful to prepare a more detailed timeline showing when each part of testing will take place. 
+It can also be helpful to prepare a more detailed timeline showing when each part of testing will take place.
 
 When dealing with a client explicitly stating start and end dates helps with managing expectations. When it comes to budget, it ensures that you do not work more than the budget allows for. If there is a need for more work to be done make sure that it is paid for.
 
@@ -66,7 +66,7 @@ If you are only testing for your own use, setting time boundaries can help not g
 
 > This section is only relevant if you are testing a device for a client.
 
-Do not forget to specify the terms and dates for payment. The terms will differ for each tester but the goal is to determine when and how much you will be paid.
+Do not forget to specify the terms and dates for payment. The terms will differ for each tester, but the goal is to determine when and how much you will be paid.
 
 ### Legal
 
@@ -97,6 +97,8 @@ When testing radio communication for example, be sure to only utilize frequencie
 ## Post exploitation
 
 ## Reporting
+
+
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque lectus elit, egestas quis urna non, condimentum posuere quam. Praesent et condimentum quam. Donec dignissim neque nunc, quis scelerisque ex accumsan sit amet. Quisque sed semper ante. Maecenas tincidunt justo sapien, eu scelerisque magna facilisis eget. Integer mauris ex, euismod at nisi at, maximus posuere leo. Praesent pharetra tincidunt ultricies. Donec bibendum ornare sem, id sodales odio. Vestibulum mollis lorem at est ornare, a interdum sapien ornare. Duis et neque ornare tellus lacinia egestas. Praesent sit amet risus ipsum. Ut vitae nisi a lacus hendrerit laoreet.
 
