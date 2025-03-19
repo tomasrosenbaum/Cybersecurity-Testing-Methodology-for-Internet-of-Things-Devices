@@ -76,6 +76,53 @@ When testing radio communication for example, be sure to only utilize frequencie
 
 ## Intelligence gathering
 
+The goal of this section is to find out as much information as possible about your target. If you are not working for a client the following section will look really similar to the previous one. If you are working for a client the difference will be that you will perform this section mostly without your client's cooperation. Either way this section results in a more in-depth understanding of the tested system.
+
+Anytime you discover something new you should determine wether it is part of the defined scope and potentionally discuss it with the client. Analysing out-of-scope components may cost you a lot of your valuable time. 
+
+### Hardware
+
+Look for any hardware datasheets regarding the tested device. Identify as many components as possible using obtained datasheets and visual inspection. Identify the CPU architecture. 
+
+Obtain the FCC ID of the device and look for any additional infromation on [fccid.io](https://fccid.io/).
+
+Identify any exposed interfaces and ports.
+
+Which frequencies does the device use for communication?
+
+Is there any temper evidence/resistance technology used?
+
+### Firmware
+
+Ideally try to access the codebase of the firmware as this will greatly help with the following analysis. Look for any current/relevant bug reports and past testing reports.
+
+If you have access to the firmware's source code, analyse it directly for any potential vulnerabilities. [Coverity Scan](https://scan.coverity.com/) is an automated static analysis tool that may be useful during this step.
+
+Obtain the firmware used on the tested device. This can be a very complex step depending on the situation. Ideally you would be able to obtain the firmware directly from the vendor or by building it yourself from the source code. If this is not an option you can try to extract the firmware directly from the device (previous analysis of used interfaces and ports is helpful).
+
+#### Firmware analysis
+
+Use utilities like `file`, `strings`, `binwalk`, `hexdump` and `fdisk` for initial analysis of the file. You can check the firmware's entropy (e.g. `binwalk -E <bin>`) to try to dtermine wether the firmware is encrypted or not.
+
+Next, utilize automated tools like [FACT](https://github.com/fkie-cad/FACT_core) or [EMBA](https://github.com/e-m-b-a/emba) to scan the firmware for filesystems, vulnerabilities, suspicious binaries etc.
+
+#### Filesystem
+
+Next, try to extract the filesystem from the firmware. You can try extracting it with `binwalk -ev <bin>`. If that does not work, use `binwalk` to find the filesystem's offset, carve it using `dd` and extract the files with an appropriate utility (based on the used filesystem).
+
+Analyze the found files and look for any important file. Automated tool such as [Firmwalker](https://github.com/craigz28/firmwalker) may prove useful.
+
+Further analyze any suspicous binaries. As a great first step, use [Checksec](https://github.com/slimm609/checksec) to check for RELRO, stack canaries, etc. 
+
+### Communication protocol
+
+Learn as much information about the communication protocol as possible. This includes the following information:
+
+- radio frequencies
+- used ports
+- security (authentication, authorization, encryption, etc.)
+- default keys and credentials
+
 ## Threat modeling
 
 ## Vulnerability analysis
