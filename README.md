@@ -94,7 +94,7 @@ Is there any temper evidence/resistance technology used?
 
 ### Firmware
 
-Ideally try to access the codebase of the firmware as this will greatly help with the following analysis. Look for any current/relevant bug reports and past testing reports.
+Ideally try to access the codebase of the firmware as this will greatly help with the following analysis. Look for any current/relevant bug reports, past testing reports and known vulnerabilities.
 
 If you have access to the firmware's source code, analyse it directly for any potential vulnerabilities. [Coverity Scan](https://scan.coverity.com/) is an automated static analysis tool that may be useful during this step.
 
@@ -122,6 +122,7 @@ Learn as much information about the communication protocol as possible. This inc
 - used ports
 - security (authentication, authorization, encryption, etc.)
 - default keys and credentials
+- known vulnerabilites
 
 ## Threat modeling
 
