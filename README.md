@@ -126,11 +126,11 @@ Learn as much information about the communication protocol as possible. This inc
 
 ## Threat modeling
 
-Threat modeling is an important step when it comes to both testing and developing a product. Its goal is to find specific threats of a system.
+Threat modeling is an important step when it comes to both testing and developing a product. Its goal is to find specific threats to a system.
 
 ### Diagrams
 
-First step is to understand the system being tested. Using our knowledge from pre-engagement interactions and intelligance gathering we are able to create a diagram representing the system. This helps to better visualize different components and how they are connected.
+The first step is to understand the system being tested. Using our knowledge from pre-engagement interactions and intelligance gathering, we are able to create a diagram representing the system. This helps to better visualize different components and how they are connected.
 
 ### Trust levels
 
@@ -138,7 +138,7 @@ Identify the different levels of access rights to the system. The system will ge
 
 ### Assets
 
-Next, identify assets - items of interest. These are parts of the system that the attacker might be interested in. These include stuff like login credentials, cryptographic keys and other data associated with the device. For each asset, list all of the associated trust levels that are albe to access it.
+Next, identify assets - items of interest. These are parts of the system that the attacker might be interested in. These include stuff like login credentials, cryptographic keys and other data associated with the device. For each asset, list all of the associated trust levels that are able to access it.
 
 ### Entry points
 
@@ -146,7 +146,7 @@ This step helps describe points of the system through which an entity can intera
 
 ### Threat identification
 
-When the system is properly modeled and key parts are identified, identify all threats of the system. There are many methodologies focusing on threat modeling/identification but one of the most commonly used ones is STRIDE (spoofing, tampering, repudation, information disclosure, denial of service and elevation of privilege). These help identify as well as categorize as many threats as possible.
+When the system is properly modeled and key parts are identified, identify all threats to the system. There are many methodologies focusing on threat modeling/identification but one of the most commonly used ones is STRIDE (spoofing, tampering, repudiation, information disclosure, denial of service, and elevation of privilege). These help identify as well as categorize as many threats as possible.
 
 ## Vulnerability analysis
 
