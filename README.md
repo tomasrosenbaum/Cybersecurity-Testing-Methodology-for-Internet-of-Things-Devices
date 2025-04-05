@@ -92,11 +92,11 @@ Which frequencies does the device use for communication?
 
 Is there any temper evidence/resistance technology used?
 
+Try connecting to the serial interface if one is available and identify the baudrate. Find out if there is any shell available through the serial port and whether it is authenticated or not.
+
 ### Firmware
 
 Ideally, try to access the codebase of the firmware, as this will greatly help with the following analysis. Look for any current/relevant bug reports, past testing reports, and known vulnerabilities.
-
-If you have access to the firmware's source code, analyze it directly for any potential vulnerabilities. [Coverity Scan](https://scan.coverity.com/) is an automated static analysis tool that may be useful during this step.
 
 Obtain the firmware used on the tested device. This can be a very complex step depending on the situation. Ideally, you would be able to obtain the firmware directly from the vendor or by building it yourself from the source code. If this is not an option, you can try to extract the firmware directly from the device (previous analysis of used interfaces and ports is helpful).
 
@@ -104,15 +104,11 @@ Obtain the firmware used on the tested device. This can be a very complex step d
 
 Use utilities like `file`, `strings`, `binwalk`, `hexdump` and `fdisk` for the initial analysis of the file. You can check the firmware's entropy (e.g., `binwalk -E <bin>`) to try to determine whether the firmware is encrypted or not.
 
-Next, utilize automated tools like [FACT](https://github.com/fkie-cad/FACT_core) or [EMBA](https://github.com/e-m-b-a/emba) to scan the firmware for filesystems, vulnerabilities, suspicious binaries, etc.
-
 #### Filesystem
 
 Next, try to extract the filesystem from the firmware. You can try extracting it with `binwalk -ev <bin>`. If that does not work, use `binwalk` to find the filesystem's offset, carve it using `dd` and extract the files with an appropriate utility (based on the used filesystem).
 
 Analyze the found files and look for any important files. Automated tools such as [Firmwalker](https://github.com/craigz28/firmwalker) may prove useful.
-
-Further analyze any suspicious binaries. As a great first step, use [Checksec](https://github.com/slimm609/checksec) to check for RELRO, stack canaries, etc. If need be, try disassembling the binaries for further analysis.
 
 ### Communication protocol
 
@@ -150,11 +146,67 @@ When the system is properly modeled and key parts are identified, identify all t
 
 ## Vulnerability analysis
 
+During this phase vulnerabilities are discovered through combination of automated tools and manual testing. Prior threat modeling helps in focusing on specific parts of the system as to not test blindly. 
+
 ### Hardware
+
+Generally your goal here is to access the device's firmware/data through the provided interfaces.
+
+Being able to dump the firmware directly from the device may be beneficial because it may contain device specific information, e.g. preprogrammed cryptographic keys.
+
+Also try dumping data from the flash as it may contain sensitive and useful information.
+
+You may alo try modifying the obtained fimrware/data and writing it back on the device. This way, you may alter the expected behaviour of the device.
+
+If you are able to connect to the device's shell, try dumping the firmware, modifying values, checking for persistance across reboots, privileges, etc.
 
 ### Firmware
 
+Vulnerability analysis of firmware can be very extensive. Luckily most of it is done through automated tools first.
+
+If you have access to the firmware's source code, analyze it directly for any potential vulnerabilities. [Coverity Scan](https://scan.coverity.com/) is an automated static analysis tool that may be useful during this step.
+
+Next, utilize automated tools like [FACT](https://github.com/fkie-cad/FACT_core), [EMBA](https://github.com/e-m-b-a/emba) or [Bytesweep](https://gitlab.com/bytesweep/bytesweep) to scan the firmware for filesystems, vulnerabilities, suspicious binaries, etc.
+
+Further analyze any suspicious binaries identified during information gathering. As a great first step, use [Checksec](https://github.com/slimm609/checksec) to check for RELRO, stack canaries, etc. If need be, try disassembling the binaries for further analysis.
+
+#### Emulation
+
+For dynamic analysis it is desirable to be able to emulate the device's firmware. Whenever possible, try to perform a full-system emulation. Below are listed some automated tools for automatic emulation. These tools often come with vulnerability scanning ability as well.
+
+- [Firmware Analysis Toolkit](https://github.com/attify/firmware-analysis-toolkit)
+- [EMUX](https://github.com/therealsaumil/emux)
+- [MIPS-X](https://github.com/getCUJO/MIPS-X)
+- [FIRMADYNE](https://github.com/firmadyne/firmadyne)
+- [Qltool](https://github.com/qilingframework/qiling#qltool)
+
+If it is not possible to perform a full-system emulation, you can try emulating specific binaries using `qemu` and `chroot`.
+
+#### Dynamic testing
+
+Using the emulated firmware, perform dynamic testing of the bootloader, firmware and applications.
+
+> Some devices may provide a web application as part of its functionality. Testing of such applications is out of scope of this methodology, however [OWASP's Web Security Testing Guide](https://owasp.org/www-project-web-security-testing-guide/) contains detailed steps on how to proceed.
+
+Below is a list of ideas to test:
+
+- bootloader
+    - access to the bootloader's shell
+    - modifying boot arguments to execute code
+    - providing a fake image over the network
+- firmware
+    - deploying reverse shell
+- applications
+    - attaching a debugger to the emulated running aplication and closely analyze suspicious applications and functions highlighted during static analysis
+
 ### Communication protocol
+
+Analysis of the communication protocol differs based on the used protocol. Below are some things to look for:
+
+- Is it possible to sniff the communication?
+- Is encryption used during communication?
+- Are well-known keys used for encryption?
+- Is replay attack possible?
 
 ## Exploitation
 
