@@ -146,7 +146,9 @@ When the system is properly modeled and key parts are identified, identify all t
 
 ## Vulnerability analysis
 
-During this phase vulnerabilities are discovered through combination of automated tools and manual testing. Prior threat modeling helps in focusing on specific parts of the system as to not test blindly. 
+During this phase vulnerabilities are discovered through combination of automated tools and manual testing. Prior threat modeling helps in focusing on specific parts of the system as to not test blindly.
+
+Be sure to manually check any vulnerabiities reported by automated tools to avoid false positives.
 
 ### Hardware
 
