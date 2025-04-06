@@ -92,7 +92,7 @@ Which frequencies does the device use for communication?
 
 Is there any temper evidence/resistance technology used?
 
-Try connecting to the serial interface if one is available and identify the baudrate. Find out if there is any shell available through the serial port and whether it is authenticated or not.
+Try connecting to the serial interface if one is available and identify the baud rate. Find out if there is any shell available through the serial port and whether it is authenticated or not.
 
 ### Firmware
 
@@ -102,7 +102,7 @@ Obtain the firmware used on the tested device. This can be a very complex step d
 
 #### Firmware analysis
 
-Use utilities like `file`, `strings`, `binwalk`, `hexdump` and `fdisk` for the initial analysis of the file. You can check the firmware's entropy (e.g., `binwalk -E <bin>`) to try to determine whether the firmware is encrypted or not.
+Use utilities like `file`, `strings`, `binwalk`, `hexdump`, and `fdisk` for the initial analysis of the file. You can check the firmware's entropy (e.g., `binwalk -E <bin>`) to try to determine whether the firmware is encrypted or not.
 
 #### Filesystem
 
@@ -146,35 +146,35 @@ When the system is properly modeled and key parts are identified, identify all t
 
 ## Vulnerability analysis
 
-During this phase vulnerabilities are discovered through combination of automated tools and manual testing. Prior threat modeling helps in focusing on specific parts of the system as to not test blindly.
+During this phase, vulnerabilities are discovered through a combination of automated tools and manual testing. Prior threat modeling helps in focusing on specific parts of the system so as not to test blindly.
 
-Be sure to manually check any vulnerabiities reported by automated tools to avoid false positives.
+Be sure to manually check any vulnerabilities reported by automated tools to avoid false positives.
 
 ### Hardware
 
-Generally your goal here is to access the device's firmware/data through the provided interfaces.
+Generally, your goal here is to access the device's firmware/data through the provided interfaces.
 
-Being able to dump the firmware directly from the device may be beneficial because it may contain device specific information, e.g. preprogrammed cryptographic keys.
+Being able to dump the firmware directly from the device may be beneficial because it may contain device-specific information, e.g., preprogrammed cryptographic keys.
 
-Also try dumping data from the flash as it may contain sensitive and useful information.
+Also try dumping data from the flash, as it may contain sensitive and useful information.
 
-You may alo try modifying the obtained fimrware/data and writing it back on the device. This way, you may alter the expected behaviour of the device.
+You may also try modifying the obtained firmware/data and writing it back on the device. This way, you may alter the expected behavior of the device.
 
-If you are able to connect to the device's shell, try dumping the firmware, modifying values, checking for persistance across reboots, privileges, etc.
+If you are able to connect to the device's shell, try dumping the firmware, modifying values, checking for persistence across reboots, checking privileges, etc.
 
 ### Firmware
 
-Vulnerability analysis of firmware can be very extensive. Luckily most of it is done through automated tools first.
+Vulnerability analysis of firmware can be very extensive. Luckily, most of it is done through automated tools first.
 
 If you have access to the firmware's source code, analyze it directly for any potential vulnerabilities. [Coverity Scan](https://scan.coverity.com/) is an automated static analysis tool that may be useful during this step.
 
-Next, utilize automated tools like [FACT](https://github.com/fkie-cad/FACT_core), [EMBA](https://github.com/e-m-b-a/emba) or [Bytesweep](https://gitlab.com/bytesweep/bytesweep) to scan the firmware for filesystems, vulnerabilities, suspicious binaries, etc.
+Next, utilize automated tools like [FACT](https://github.com/fkie-cad/FACT_core), [EMBA](https://github.com/e-m-b-a/emba), or [Bytesweep](https://gitlab.com/bytesweep/bytesweep) to scan the firmware for filesystems, vulnerabilities, suspicious binaries, etc.
 
 Further analyze any suspicious binaries identified during information gathering. As a great first step, use [Checksec](https://github.com/slimm609/checksec) to check for RELRO, stack canaries, etc. If need be, try disassembling the binaries for further analysis.
 
 #### Emulation
 
-For dynamic analysis it is desirable to be able to emulate the device's firmware. Whenever possible, try to perform a full-system emulation. Below are listed some automated tools for automatic emulation. These tools often come with vulnerability scanning ability as well.
+For dynamic analysis, it is desirable to be able to emulate the device's firmware. Whenever possible, try to perform a full-system emulation. Below are listed some automated tools for automatic emulation. These tools often come with vulnerability scanning ability as well.
 
 - [Firmware Analysis Toolkit](https://github.com/attify/firmware-analysis-toolkit)
 - [EMUX](https://github.com/therealsaumil/emux)
@@ -186,7 +186,7 @@ If it is not possible to perform a full-system emulation, you can try emulating 
 
 #### Dynamic testing
 
-Using the emulated firmware, perform dynamic testing of the bootloader, firmware and applications.
+Using the emulated firmware, perform dynamic testing of the bootloader, firmware, and applications.
 
 > Some devices may provide a web application as part of its functionality. Testing of such applications is out of scope of this methodology, however [OWASP's Web Security Testing Guide](https://owasp.org/www-project-web-security-testing-guide/) contains detailed steps on how to proceed.
 
@@ -199,7 +199,7 @@ Below is a list of ideas to test:
 - firmware
     - deploying reverse shell
 - applications
-    - attaching a debugger to the emulated running aplication and closely analyze suspicious applications and functions highlighted during static analysis
+    - attaching a debugger to the emulated running application and closely analyzing suspicious applications and functions highlighted during static analysis
 
 ### Communication protocol
 
@@ -208,7 +208,7 @@ Analysis of the communication protocol differs based on the used protocol. Below
 - Is it possible to sniff the communication?
 - Is encryption used during communication?
 - Are well-known keys used for encryption?
-- Is replay attack possible?
+- Is a replay attack possible?
 
 ## Exploitation
 
