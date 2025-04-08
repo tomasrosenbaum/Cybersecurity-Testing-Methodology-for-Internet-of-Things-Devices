@@ -224,4 +224,10 @@ Also take time into consideration. While demonstrating the weaknesses is importa
 
 ## Post exploitation
 
+After successfully exploiting the system, it is important to perform some follow-up steps.
+
+Firstly, assess what options you currently have. Find out the extent of your current privileges and what you can do with them. Further, try determinig if you can escalate those privileges to give you even more access and possibilites. See if it is possible to assure persistence even through reboots. Follow up by determining if lateral movement is possible, e.g. if you can exploit another device on a wireless network through currently exploited device.
+
+When you are done with assessing the impact of the exploit, make sure to **clean up after yourself**. This means to revert any setting changes, deleting files made by you, removing any installed backdoor, etc.
+
 ## Reporting
