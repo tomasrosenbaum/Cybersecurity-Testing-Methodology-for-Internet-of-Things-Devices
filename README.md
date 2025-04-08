@@ -5,7 +5,7 @@
 1. [Threat modeling](#threat-modeling)
 1. [Vulnerability analysis](#vulnerability-analysis)
 1. [Exploitation](#exploitation)
-1. [Post exploitation](#post-exploitation)
+1. [Post-exploitation](#post-exploitation)
 1. [Reporting](#reporting)
 
 ## Pre-engagement interactions
@@ -222,12 +222,12 @@ The performed exploits should obviously be within the defined scope. For example
 
 Also take time into consideration. While demonstrating the weaknesses is important, it is not worth it to spend a lot of time on an exploit. Sometimes it is better to only create a proof of concept rather than taking a lot of time to craft a proper exploit.
 
-## Post exploitation
+## Post-exploitation
 
 After successfully exploiting the system, it is important to perform some follow-up steps.
 
-Firstly, assess what options you currently have. Find out the extent of your current privileges and what you can do with them. Further, try determinig if you can escalate those privileges to give you even more access and possibilites. See if it is possible to assure persistence even through reboots. Follow up by determining if lateral movement is possible, e.g. if you can exploit another device on a wireless network through currently exploited device.
+Firstly, assess what options you currently have. Find out the extent of your current privileges and what you can do with them. Further, try determining if you can escalate those privileges to give you even more access and possibilities. See if it is possible to assure persistence even through reboots. Follow up by determining if lateral movement is possible, e.g., if you can exploit another device on a wireless network through the currently exploited device.
 
-When you are done with assessing the impact of the exploit, make sure to **clean up after yourself**. This means to revert any setting changes, deleting files made by you, removing any installed backdoor, etc.
+When you are done with assessing the impact of the exploit, make sure to **clean up after yourself**. This means to revert any setting changes, delete any files made by you, remove any installed backdoor, etc.
 
 ## Reporting
