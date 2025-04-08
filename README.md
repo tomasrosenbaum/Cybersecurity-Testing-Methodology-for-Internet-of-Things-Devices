@@ -212,13 +212,13 @@ Analysis of the communication protocol differs based on the used protocol. Below
 
 ## Exploitation
 
-An important step during security testing is exploitation which acts as an evidence that the target system can be tampered with.
+An important step during security testing is exploitation, which acts as evidence that the target system can be tampered with.
 
-It is not necessary nor desirable to exploit every signle discovered vulnerability. When crafting an exploit, there are some things you should look out for.
+It is not necessary nor desirable to exploit every single discovered vulnerability. When crafting an exploit, there are some things you should look out for.
 
-Firstly, the exploits should be as simple as possible while having the biggest impact as possible. Using convoluted exploits just to leverage a niche vulnerability is not useful when simpler solution exists.
+Firstly, the exploits should be as simple as possible while having the biggest impact as possible. Using convoluted exploits just to leverage a niche vulnerability is not useful when simpler solutions exist.
 
-The performed exploits should obviously be iwithin the defined scope. For example, it is not desirable to perform radio jamming when DoS is out of scope.
+The performed exploits should obviously be within the defined scope. For example, it is not desirable to perform radio jamming when DoS is out of scope.
 
 Also take time into consideration. While demonstrating the weaknesses is important, it is not worth it to spend a lot of time on an exploit. Sometimes it is better to only create a proof of concept rather than taking a lot of time to craft a proper exploit.
 
