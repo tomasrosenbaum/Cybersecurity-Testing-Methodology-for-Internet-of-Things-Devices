@@ -232,26 +232,26 @@ When you are done with assessing the impact of the exploit, make sure to **clean
 
 ## Reporting
 
-Generating a final report is a very important step whether you are working for a client or not. When working for a client this is the document that describes the work you have done and what you get paid for. Even if you are not getting paid for the testing it is helpful to create a report to organize your findings. It is also a helpful skill to have in the future. It is recommended to write the report during the testing in order to not leave anything out and to spread the work needed.
+Generating a final report is a very important step, whether you are working for a client or not. When working for a client, this is the document that describes the work you have done and what you get paid for. Even if you are not getting paid for the testing, it is helpful to create a report to organize your findings. It is also a helpful skill to have in the future. It is recommended to write the report during the testing in order to not leave anything out and to spread the work needed.
 
 The final report should contain these parts in roughly this order:
 
 1. project overview
-    - description of the project, what is being tested
+    - description of the project and what is being tested
 1. scope description
     - description of the scope of the testing, outcome of pre-engagement interactions
 1. executive summary
     - summary for higher-level personnel describing what was done and the most important findings
 1. scoring system description
-    - what scoring system are you using to rank the vulnerabilities, how it works (e.g., [CVSS](https://www.first.org/cvss/calculator/4-0))
+    - what scoring system are you using to rank the vulnerabilities, and how does it work (e.g., [CVSS](https://www.first.org/cvss/calculator/4-0))
 1. list of findings
     - list of all findings with their description and vulnerability score
 1. vulnerability analysis
-    - detailed description of findings including steps to replicate and tips to fix the issue
+    - detailed description of findings, including steps to replicate and tips to fix the issue
 1. exploitation and post-exploitation results
     - detailed results of what you were able to accomplish during the *exploitation* and *post-exploitation* phases
 1. threat model
 1. intelligence gathering outcome
-1. detailed description of testing process
+1. detailed description of the testing process
     - description of each step taken during testing even if it did not lead to a finding
 
