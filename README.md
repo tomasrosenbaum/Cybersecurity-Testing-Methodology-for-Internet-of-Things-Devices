@@ -8,6 +8,8 @@
 1. [Post-exploitation](#post-exploitation)
 1. [Reporting](#reporting)
 
+[Additional resources](#additional-resources)
+
 ## Pre-engagement interactions
 
 This section aims to describe the necessary steps to prepare for the penetration test. Even if the testing is not done for a client but rather for your own needs, it is still important to go through the following steps.
@@ -255,3 +257,8 @@ The final report should contain these parts in roughly this order:
 1. detailed description of the testing process
     - description of each step taken during testing even if it did not lead to a finding
 
+## Additional resources
+
+- [OWASP Firmware Security Testing Methodology](https://scriptingxss.gitbook.io/firmware-security-testing-methodology)
+- [IoT Pentesting Guide](https://www.iotpentestingguide.com/)
+- [OWASP IoT Security Testing Guide](https://owasp.org/owasp-istg/)
